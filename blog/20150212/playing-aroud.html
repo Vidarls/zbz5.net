@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <title>ZBZ5.net - Playing around</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../assets/style.css"></link>
+    </head>
+    <body>
+        <header>
+            <h1>
+                <a href="/">ZBZ5.NET</a>
+            </h1>
+            <nav>
+                <li>
+                    <a href="/about">About</a>
+                </li>
+                <li>
+                    <a href="https://github.com/vidarls" title="My code on Github">Github</a>
+                </li>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <section>
+                    <header>
+                        <h1>Playing around</h1>
+                        <time datetime="2015-02-12">February 12th 2015</time>
+                    </header>
+                    <figure class="left">
+                        <img src="images/42030_Webfiles_SECIMG_small.jpg" alt="Illustration photo, Lego Volvo RC Wheel loader"/>
+                        <figcaption>
+                            <a href="http://www.lego.com/technic/products/42030-remotecontrolled-volvo-l350f-wheel-loader">
+                                Image from product site
+                            </a>
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Just checked: my previous blog post was published in March 2013! 
+                        Nearly two years ago.
+                    </p>
+                    <p>It's been a crazy couple of years!</p>
+                    <p>
+                        It's been a period that probably have the potential for some blog posts in the spirit of 
+                        <a href= "http://www.marcusoft.net/">
+                            Marcus Hammarberg</a> (a big inspiration, and well worth reading.) 
+                        But, it also mean I've gotten to do less coding at work, 
+                        and definitely less fun and exciting coding.
+                    </p>
+                    <p>The solution?</p>
+                    <h2>A fun and exciting side project of course!</h2>
+                    <p>
+                        <blockquote>
+                            Work and play are words used to describe the same thing under differing conditions.
+                            <br/>
+                            -Mark Twain
+                        </blockquote>
+                    </p>
+                    <p>
+                        I've always loved playing with 
+                        <a href="http://www.lego.com/">Lego</a>, in particular Lego Technic. 
+                        And this christmas yielded the 
+                        <a href="http://www.lego.com/technic/products/42030-remotecontrolled-volvo-l350f-wheel-loaderhttp://www.lego.com/technic/products/42030-remotecontrolled-volvo-l350f-wheel-loader">
+                            Volvo wheel loader</a>. 
+                        This set features a remote controlled model of an actual Volvo Wheel loader:
+                    </p>
+                    <figure class="full">
+                        <iframe 
+                            width="100%"
+                            height="400px"
+                            src="https://www.youtube.com/embed/EnPJ2-u60Lc" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <figcaption>
+                            Video presentation of the Lego Volvo RC Wheel loader
+                        </figcaption>
+                    </figure>
+                    <p>
+                        The interresting part here is the remote control part. 
+                        This model is remote contolled by an Infrared (IR) remote control, 
+                        like TV remotes. Lately some mobile phones, like my Samsung Galaxy S4, 
+                        are including IR blasters that can be used for remote controlling stuff. 
+                        Usually stuff is your TV,
+                        and the app a less good version of a Logitech Harmony remote control.
+                        Being a typical tinkerer, I wanted to see if I could control my Lego set with 
+                        my phone. 
+                        I found only 
+                        <a href="https://play.google.com/store/apps/details?id=com.redfishlab.samsungs4speedremoteforlegopf">
+                            the Samsung S4 Lego Speed Remote
+                        </a>. Alas, 
+                        this app only works for model S4 with 
+                        Android version lower than 4.4 (Kit Kat).
+                    </p>
+                    <p>
+                        The next obvious step was: Lets build one myself. 
+                        Ignoring the fact that I've never built a working Andorid app before, 
+                        this seemed like a perfectly good idea. 
+                        (Particularly now that 
+                        <a href="https://developer.android.com/sdk/index.html">
+                            you no longer need to deal with eclipse
+                        </a> to do 
+                        Android development).
+                    </p>
+                    <p>
+                        To realise this project I needed two things:
+                        <ol>
+                            <li>Documentation of how the IR protocol works.</li>
+                            <li>Some way of accessing the IR blaster on my device.</li>
+                        </ol>
+                        <figure class="right">
+                            <img src="images/42030_xray_small.jpg" alt="Illustration photo Lego Volvo RC Wheel loader" />
+                            <figcaption>
+                                <a href="http://www.lego.com/technic/products/42030-remotecontrolled-volvo-l350f-wheel-loader">
+                                    Image photo from product site
+                                </a>
+                            </figcaption>
+                        </figure>
+                    </p>
+                    <p>
+                        Lego, being awesome in general of course have created a 
+                        <a href="http://cache.lego.com/Media/Download/PowerfunctionsElementSpecsDownloads/otherfiles/download9FC026117C091015E81EC28101DACD4E/8884RemoteControlIRReceiver_Download.pdf">
+                            PDF describing the IR protocol in detail available from the IR receiver product page.
+                        </a>
+                        Second, with Andorid 4.4 (Kit Kat) 
+                        <a href="https://developer.android.com/reference/android/hardware/ConsumerIrManager.html">
+                            the consumer ir manager API
+                        </a> was added, 
+                        making available an easy way of using IR blasters, regardless of vendor.
+                    </p>
+                    <p>
+                        The result can be seen at <a href="https://github.com/Vidarls/legoremote">my Github account</a>. 
+                        Code is still a bit rough and the UI is hideous. 
+                        <strong>it is working!</strong> 
+                        (At least on 4.4.2, 
+                        <a href="http://stackoverflow.com/a/25518468">
+                            there seems to be breaking changes in 4.4.3)
+                        </a>
+                    </p>
+                    <p>
+                        This is the first blog post in almost two years. 
+                        If the motivation stays I might even post another one within reasonable time..
+                    </p>
+                </section>
+                <section id="disqus_thread">
+                    <script>
+                        var disqus_developer = 1;
+                        /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                        /*
+                        var disqus_config = function () {
+                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        */
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://zbz5net.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
+            </article>
+        </main>
+    </body>
+</html>
